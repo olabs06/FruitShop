@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html'%}
+
+    {% block content %}
+        <h1>Veggies</h1>
+        <div class="row">
+            {% for veggie in veggies %}
+                <div class="col" style="margin-bottom: 3rem;">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ veggie.image_url }}" class="card-img-top" alt="..." height="200">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ veggie.name }}</h5>
+                      <p class="card-text">${{ veggie.price }}</p>
+                      <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+                </div>
+            {% endfor %}
+        
+        </div>
+        
+    {% endblock %}
+
+</body>
+</html>
